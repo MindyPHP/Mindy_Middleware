@@ -1,9 +1,11 @@
 <?php
 
 namespace Mindy\Middleware;
+
 use Exception;
-use Mindy\Base\ApplicationComponent;
 use Mindy\Helper\Creator;
+use Mindy\Helper\Traits\Accessors;
+use Mindy\Helper\Traits\Configurator;
 use Mindy\Http\Request;
 
 /**
@@ -18,8 +20,10 @@ use Mindy\Http\Request;
  * @site http://studio107.ru
  * @date 11/04/14.04.2014 16:47
  */
-class MiddlewareManager extends ApplicationComponent implements IMiddleware
+class MiddlewareManager implements IMiddleware
 {
+    use Configurator, Accessors;
+
     /**
      * @var Middleware[]
      */
