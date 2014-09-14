@@ -25,12 +25,11 @@ abstract class Middleware implements IMiddleware
 
     /**
      * Event owner RenderTrait
+     * @param \Mindy\Http\Request $request
      * @param $output string
-     * @return string
      */
-    public function processView($output)
+    public function processView(Request $request, &$output)
     {
-        return $output;
     }
 
     public function processException(Exception $exception)

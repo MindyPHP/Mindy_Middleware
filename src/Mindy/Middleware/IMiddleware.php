@@ -1,6 +1,7 @@
 <?php
 
 namespace Mindy\Middleware;
+
 use Exception;
 use Mindy\Http\Request;
 
@@ -22,10 +23,10 @@ interface IMiddleware
 
     /**
      * Event owner RenderTrait
+     * @param \Mindy\Http\Request $request
      * @param $output string
-     * @return string
      */
-    public function processView($output);
+    public function processView(Request $request, &$output);
 
     /**
      * @param Exception $exception
