@@ -34,5 +34,9 @@ interface IMiddleware
      */
     public function processException(Exception $exception);
 
-    public function processResponse();
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function processResponse(Request $request);
 }

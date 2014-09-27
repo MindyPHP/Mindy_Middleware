@@ -37,7 +37,7 @@ abstract class Middleware implements IMiddleware
 
     }
 
-    public function processResponse()
+    public function processResponse(Request $request)
     {
     }
 }

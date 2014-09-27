@@ -66,10 +66,10 @@ class MiddlewareManager implements IMiddleware
         }
     }
 
-    public function processResponse()
+    public function processResponse(Request $request)
     {
         foreach ($this->_middleware as $middleware) {
-            $middleware->processResponse();
+            $middleware->processResponse($request);
         }
     }
 }
