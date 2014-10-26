@@ -20,7 +20,8 @@ class AjaxRedirectMiddleware extends Middleware
 {
     public function processResponse(Request $request)
     {
-        if($request->getIsAjax()) {
+        if ($request->getIsPost() && $request->getIsAjax()) {
+            header("Location: " . $request->getPath());
             header("HTTP/1.1 278 OK", true, 278);
         }
     }
