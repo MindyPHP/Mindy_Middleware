@@ -22,7 +22,7 @@ class HtmlMinMiddleware extends Middleware
 
     public function processView(Request $request, &$output)
     {
-        if($this->spaceless) {
+        if ($this->spaceless) {
             $output = trim(preg_replace('/>\\s+</', '><', $output));
         } else {
             $output = preg_replace('~>\s+<~', '><', $output);
