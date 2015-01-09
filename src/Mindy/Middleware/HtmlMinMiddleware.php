@@ -18,7 +18,7 @@ use Mindy\Http\Request;
  */
 class HtmlMinMiddleware extends Middleware
 {
-    public $spaceless = false;
+    public $spaceless = true;
 
     public function processView(Request $request, &$output)
     {
