@@ -32,8 +32,9 @@ abstract class Middleware implements IMiddleware
      * @param \Mindy\Http\Request $request
      * @param $output string
      */
-    public function processView(Request $request, &$output)
+    public function processView(Request $request, $output)
     {
+        return $output;
     }
 
     /**

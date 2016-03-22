@@ -37,7 +37,7 @@ class StaticPageCacheMiddleware extends Middleware
         }
     }
 
-    public function processView(Request $request, &$output)
+    public function processView(Request $request, $output)
     {
         $fileName = ($request->path == '/' ? 'index' : basename($request->path)) . '.html';
         $dir = str_replace('/', '.', ltrim(dirname($request->path), '/'));
@@ -49,5 +49,6 @@ class StaticPageCacheMiddleware extends Middleware
         if (!file_exists($path) || (time() - fileatime($path)) > $this->timeout) {
             file_put_contents($cachePath . DIRECTORY_SEPARATOR . $fileName, $output);
         }
+        return $output;
     }
 }

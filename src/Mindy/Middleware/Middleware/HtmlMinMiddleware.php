@@ -23,8 +23,9 @@ class HtmlMinMiddleware extends Middleware
      * Use this only with StaticPageCacheMiddleware
      * @param Request $request
      * @param string $output
+     * @return mixed|void
      */
-    public function processView(Request $request, &$output)
+    public function processView(Request $request, $output)
     {
         $re = '%# Collapse ws everywhere but in blacklisted elements.
         (?>             # Match all whitespaces other than single space.
@@ -46,6 +47,6 @@ class HtmlMinMiddleware extends Middleware
           )             # End alternation group.
         )  # If we made it here, we are not in a blacklist tag.
         %ix';
-        $output = preg_replace($re, " ", $output);
+        return preg_replace($re, " ", $output);
     }
 }

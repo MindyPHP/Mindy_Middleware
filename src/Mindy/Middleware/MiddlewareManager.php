@@ -42,12 +42,15 @@ class MiddlewareManager implements IMiddleware
     /**
      * @param Request $request
      * @param string $output
+     * @return string|void
      */
-    public function processView(Request $request, &$output)
+    public function processView(Request $request, $output)
     {
+        $out = $output;
         foreach ($this->_middleware as $middleware) {
-            $middleware->processView($request, $output);
+            $out = $middleware->processView($request, $output);
         }
+        return $out;
     }
 
     /**

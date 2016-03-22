@@ -26,7 +26,7 @@ interface IMiddleware
      * @param \Mindy\Http\Request $request
      * @param $output string
      */
-    public function processView(Request $request, &$output);
+    public function processView(Request $request, $output);
 
     /**
      * @param Exception $exception
