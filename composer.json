@@ -13,10 +13,7 @@
         }
     },
     "require": {
-        "php": ">=5.6",
-        "mindy/base": "*",
-        "mindy/helper": "*",
-        "mindy/http": "*"
+        "php": ">=5.6"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
