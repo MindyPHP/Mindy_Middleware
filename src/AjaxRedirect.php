@@ -21,7 +21,6 @@ class AjaxRedirect
             strtoupper($request->getMethod()) === 'POST' &&
             $request->getHeaderLine('X-Requested-With') === 'XMLHttpRequest'
         ) {
-            header("HTTP/1.1 278 OK", true, 278);
             return $response->withStatus(278);
         }
         return $response;
